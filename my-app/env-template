@@ -1,3 +1,3 @@
-MONGO_URI="mongodb+srv://ryanwillyanto:ryanaaron7@gc-01.nnhtc0c.mongodb.net/"
-NEXT_PUBLIC_API_URL="https://lq2bhbjh-3000.asse.devtunnels.ms/api"
-SECRET_KEY=yangpentingaman
+MONGO_URI=
+NEXT_PUBLIC_API_URL=
+SECRET_KEY=
