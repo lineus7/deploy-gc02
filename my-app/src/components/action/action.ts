@@ -28,5 +28,5 @@ export const handleAddWishlist = async (productId: string) => {
     redirect(`/products?error=${responseJson.error}`);
   }
   revalidatePath("/wishlist");
-  redirect("/products?success= Success Add to Cart");
+  redirect("/wishlist");
 };

@@ -76,7 +76,6 @@ const ProductsComponent = () => {
 
   return (
     <>
-      <ClientFlashParams />
       <p className="text-3xl ml-[48px] font-semibold mt-12">Produk</p>
       {products.length === 0 && !loading && (
         <div className="flex-1 flex justify-center items-center">
