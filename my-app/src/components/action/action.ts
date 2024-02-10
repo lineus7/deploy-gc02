@@ -23,6 +23,8 @@ export const handleAddWishlist = async (productId: string) => {
   const responseJson: MyResponse<unknown> = await response.json();
 
   if (!response.ok) {
+    if (responseJson.error === "Invalid credentials")
+      redirect("/login?error=Please Login First");
     redirect(`/products?error=${responseJson.error}`);
   }
   revalidatePath("/wishlist");
