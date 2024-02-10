@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Home = async () => {
   const url = process.env.NEXT_PUBLIC_API_URL as string;
-
+  if (!url) return <></>;
   const response = await (
     await fetch(url + "/product", {
       method: "POST",

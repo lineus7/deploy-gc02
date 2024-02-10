@@ -3,13 +3,29 @@ import { MyResponse, Product } from "@/type/type";
 import { Metadata } from "next";
 import Head from "next/head";
 
-export const metadata: Metadata = {
-  title: "Detail",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const url = process.env.NEXT_PUBLIC_API_URL as string;
+  if (!url) return {};
+
+  const response = (await (
+    await fetch(url + `/product/${params.slug}`)
+  ).json()) as MyResponse<unknown>;
+
+  const product = response.data as Product;
+
+  return {
+    title: product.name,
+    description: product.excerpt,
+  };
+}
 
 const Page = async ({ params }: { params: { slug: string } }) => {
   const url = process.env.NEXT_PUBLIC_API_URL as string;
-
+  if (!url) return <></>;
   const response = (await (
     await fetch(url + `/product/${params.slug}`)
   ).json()) as MyResponse<unknown>;

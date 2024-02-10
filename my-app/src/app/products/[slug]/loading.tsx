@@ -1,4 +1,4 @@
-export default () => {
+const LoadingSlug = () => {
   return (
     <>
       <div className="flex-1 flex justify-center items-center">
@@ -7,3 +7,4 @@ export default () => {
     </>
   );
 };
+export default LoadingSlug;

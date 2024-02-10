@@ -13,7 +13,7 @@ const WishlistCard = ({
   fetchWishlists: () => void;
 }) => {
   const router = useRouter();
-
+  if (!process.env.NEXT_PUBLIC_API_URL) return <></>;
   const handleDelete = async (productId: string) => {
     console.log("ini handle delete");
     console.log(productId, "<<< ini masih di handle delete");

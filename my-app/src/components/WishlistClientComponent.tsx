@@ -29,9 +29,11 @@ export const WishlistClientComponent = () => {
   };
 
   useEffect(() => {
-    fetchWishlists();
+    if (process.env.NEXT_PUBLIC_API_URL) {
+      fetchWishlists();
+    }
   }, []);
-
+  if (!process.env.NEXT_PUBLIC_API_URL) return <></>;
   return (
     <>
       <ClientFlashParams />

@@ -2,7 +2,7 @@
 
 import { handleAddWishlist } from "./action/action";
 
-export default ({ productId }: { productId: string }) => {
+const WishListDetailClientButton = ({ productId }: { productId: string }) => {
   return (
     <button
       className="w-full bg-blue-400 h-[40px] text-white hover:bg-blue-700 rounded-full my-8"
@@ -12,3 +12,5 @@ export default ({ productId }: { productId: string }) => {
     </button>
   );
 };
+
+export default WishListDetailClientButton;
